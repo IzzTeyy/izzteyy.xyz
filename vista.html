@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista - Hjälp</title>
+    <!-- Länk till CSS -->
+    <link rel="stylesheet" href="vista_style.css">
+    <!-- Google Fonts (Valfritt) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Font Awesome för ikoner (valfritt) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <h1>Vista</h1>
+            <p>Din hjälp för alla kommandon och funktioner</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="#kommandon">Kommandon</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Huvudinnehåll -->
+    <main>
+        <div class="container">
+            <!-- Introduktion -->
+            <section id="introduktion">
+                <h2>Välkommen till Vistas Hjälpsida</h2>
+                <p>Här finns hjälp för hur alla kommandon fungerar. Ps Alla kommandon finns inte här än.</p>
+            </section>
+
+            <!-- Kommandon -->
+            <section id="kommandon">
+                <h2>Kommandon</h2>
+                <div class="command-list">
+                    <!-- Sökfunktion -->
+                    <input type="text" id="searchInput" class="search-input" placeholder="Sök kommandon..." onkeyup="filterCommands()">
+
+                    <!-- Roll Kommandon -->
+                    <h3>Roll Kommandon</h3>
+                    <div class="command-item">
+                        <h4 class="command-title">
+                            <i class="fas fa-plus-circle icon"></i> /role add [användare] [roll]
+                        </h4>
+                        <div class="command-details">
+                            <p>Ger en specifik roll till en användare.</p>
+                            <p><strong>Exempel:</strong> `/role add @Användare Medlem`</p>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <h4 class="command-title">
+                            <i class="fas fa-minus-circle icon"></i> /role remove [användare] [roll]
+                        </h4>
+                        <div class="command-details">
+                            <p>Tar bort en specifik roll från en användare.</p>
+                            <p><strong>Exempel:</strong> `/role remove @Användare Medlem`</p>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <h4 class="command-title">
+                            <i class="fas fa-box-open icon"></i> /role add_paket [användare] [paket]
+                        </h4>
+                        <div class="command-details">
+                            <p>Lägger till ett paket med flera roller till en användare.</p>
+                            <p><strong>Exempel:</strong> `/role add_paket @Användare Premium`</p>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <h4 class="command-title">
+                            <i class="fas fa-box-open icon"></i> /role remove_paket [användare] [paket]
+                        </h4>
+                        <div class="command-details">
+                            <p>Tar bort ett paket med flera roller från en användare.</p>
+                            <p><strong>Exempel:</strong> `/role remove_paket @Användare Premium`</p>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <h4 class="command-title">
+                            <i class="fas fa-plus icon"></i> /role create_paket [namn] [roller]
+                        </h4>
+                        <div class="command-details">
+                            <p>Skapar ett nytt paket med specificerade roller.</p>
+                            <p><strong>Exempel:</strong> `/role create_paket VIP 123456789012345678, 234567890123456789`</p>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <h4 class="command-title">
+                            <i class="fas fa-trash-alt icon"></i> /role delete_paket [värde]
+                        </h4>
+                        <div class="command-details">
+                            <p>Raderar ett befintligt paket baserat på dess värde.</p>
+                            <p><strong>Exempel:</strong> `/role delete_paket 1`</p>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <h4 class="command-title">
+                            <i class="fas fa-list icon"></i> /role paket_list
+                        </h4>
+                        <div class="command-details">
+                            <p>Visar en lista över alla tillgängliga paket.</p>
+                            <p><strong>Exempel:</strong> `/role paket_list`</p>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <h4 class="command-title">
+                            <i class="fas fa-info-circle icon"></i> /role paket_info [värde]
+                        </h4>
+                        <div class="command-details">
+                            <p>Visar detaljerad information om ett specifikt paket.</p>
+                            <p><strong>Exempel:</strong> `/role paket_info 1`</p>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <h4 class="command-title">
+                            <i class="fas fa-user-minus icon"></i> /role removeall [användare]
+                        </h4>
+                        <div class="command-details">
+                            <p>Tar bort alla roller från en användare utom booster-rollen.</p>
+                            <p><strong>Exempel:</strong> `/role removeall @Användare`</p>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <h4 class="command-title">
+                            <i class="fas fa-users-cog icon"></i> /role manage_roles_list
+                        </h4>
+                        <div class="command-details">
+                            <p>Visar en lista över roller som kan hantera roller via Vistas rollsystem.</p>
+                            <p><strong>Exempel:</strong> `/role manage_roles_list`</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Kontakt -->
+            <section id="kontakt">
+                <h2>Kontakt</h2>
+                <p>Har du frågor eller behöver hjälp? Kontakta mig på följande sätt:</p>
+                <ul>
+                    <li>Discord: <a href="https://discord.com/users/1214154783556902984" target="_blank">Kontakta mig på discord</a></li>
+                    <p>Discord Username: izzteyy</p>
+                </ul>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Vista. Alla rättigheter förbehållna.</p>
+        </div>
+    </footer>
+
+    <!-- Länk till JavaScript -->
+    <script src="vista_script.js"></script>
+</body>
+</html>
